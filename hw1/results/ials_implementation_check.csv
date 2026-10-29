@@ -1,0 +1,2 @@
+model,purpose,params,validation_ndcg_at_10,validation_recall_at_10,fit_total_seconds,fit_body_seconds,fit_reused_cache,fit_compute_seconds,evaluation_seconds,n_users,stage_sha256
+ials,implementation_check_fixed_parameters_no_search,"{""alpha"": 10.0, ""init_std"": 0.01, ""iterations"": 10, ""rank"": 32, ""regularization"": 0.1}",0.015884706842877187,0.022848322972292685,10.801557761998993,9.724959710998519,False,9.724959710998519,0.7597603689991956,2726,bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2

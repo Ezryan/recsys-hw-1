@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "expected_experiments": 8,
+  "completed_experiments": 8,
+  "result_cache_hits": 8,
+  "comparison_sha256": "80f1095b165f9b39f3df92e94f57022fd11cdbbaf8fd59fcaa9ed163401eab9e",
+  "final_cache_key": "f173192f49b4adca4232ff9c796992030436f0f0276a3c197fdaf7289b9cf23f",
+  "runner_code_sha256": "31d0ee23913b9e719536f2c88a38ca4d3377f713c58ef4cfc31ef2e70e6e9dd1",
+  "test_stage_sha256": "2cc1c5091950a1ddba6c627c78378884753f5a4beb45dc805c8a60b4da371bfe",
+  "current_invocation_seconds": 6.056544109000242,
+  "test_used": true
+}

@@ -1,0 +1,98 @@
+{
+  "period": "test",
+  "cutoff_utc": "2017-02-02T00:00:00+00:00",
+  "history_context_sha256": "02184a5791e09520a48adeaea6010721433df6ea8766a49ae74dc56ab2e9cc2a",
+  "stage_sha256": "2cc1c5091950a1ddba6c627c78378884753f5a4beb45dc805c8a60b4da371bfe",
+  "protocol": {
+    "k": 10,
+    "relevance_rating_threshold": 4,
+    "primary_metric": "ndcg@10",
+    "secondary_metrics": [
+      "recall@10"
+    ],
+    "aggregation": "macro_user",
+    "candidate_policy": "all_history_positive_items_minus_all_seen",
+    "negative_candidate_sampling": false,
+    "cold_start_policy": "exclude_and_report",
+    "min_history_positive_interactions": 1,
+    "min_relevant_candidates": 1,
+    "min_candidates": 10,
+    "tie_break": "ascending_original_item_id",
+    "update_history_during_evaluation_period": false,
+    "validation_usage": "hyperparameter_and_epoch_selection",
+    "test_usage": "final_comparison_after_settings_are_fixed"
+  },
+  "history_n_users": 15972,
+  "history_n_items": 11774,
+  "history_positive_pairs": 122129,
+  "history_seen_pairs": 130787,
+  "n_warm_history_users": 15874,
+  "n_catalog_items": 11758,
+  "held_out_events": 14505,
+  "held_out_positive_events": 13760,
+  "n_evaluation_users": 2614,
+  "n_relevant_pairs": 8438,
+  "mean_candidates_per_evaluation_user": 11748.909716908951,
+  "min_candidates_per_evaluation_user": 11213,
+  "cold_start": {
+    "cold_user_ids": 612,
+    "fraction_held_out_user_ids": 0.18290496114763896,
+    "new_user_ids": 594,
+    "known_users_without_positive_history": 18,
+    "out_of_catalog_item_ids": 32,
+    "fraction_held_out_item_ids": 0.004766870251750335,
+    "new_item_ids": 23,
+    "known_items_without_positive_history": 9,
+    "positive_events_with_cold_user": 5201,
+    "positive_events_with_out_of_catalog_item": 173,
+    "positive_events_with_either": 5322,
+    "fraction_positive_events_with_either": 0.3867732558139535
+  },
+  "positive_event_audit": [
+    {
+      "rule": "warm_user",
+      "input_positive_events": 13760,
+      "removed_positive_events": 5201,
+      "remaining_positive_events": 8559
+    },
+    {
+      "rule": "item_in_catalog",
+      "input_positive_events": 8559,
+      "removed_positive_events": 121,
+      "remaining_positive_events": 8438
+    },
+    {
+      "rule": "exclude_all_seen",
+      "input_positive_events": 8438,
+      "removed_positive_events": 0,
+      "remaining_positive_events": 8438
+    },
+    {
+      "rule": "enough_candidates",
+      "input_positive_events": 8438,
+      "removed_positive_events": 0,
+      "remaining_positive_events": 8438
+    }
+  ],
+  "user_audit": [
+    {
+      "rule": "held_out_users",
+      "remaining_users": 3346
+    },
+    {
+      "rule": "warm_user",
+      "remaining_users": 2734
+    },
+    {
+      "rule": "enough_candidates",
+      "remaining_users": 2734
+    },
+    {
+      "rule": "has_relevant_candidate",
+      "remaining_users": 2614
+    }
+  ],
+  "n_warm_users_with_too_few_candidates": 0,
+  "n_warm_users_without_relevant_candidates": 120,
+  "test_labels_used": true
+}

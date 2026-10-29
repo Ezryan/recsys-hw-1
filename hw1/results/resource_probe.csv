@@ -1,0 +1,6 @@
+kernel,one_iteration_seconds,setup_and_warmup_seconds,baseline_rss_bytes,peak_process_rss_bytes,warmup_iterations,n_users,n_items,n_interactions,cpu_threads,finite,block_items,selected_neighbors,iteration_kind,rank,diagonal_zero,factor_reused_gram_buffer,cholesky_seconds,blocked_solve_seconds,batch_size,negative_sampling_in_probe
+item_knn_block,0.004574463000608375,0.052293830000053276,276131840,278523904,0,1500,759,4795,1,True,128.0,6400.0,one_item_block,,,,,,,
+ials_sweep,0.0651946539983328,0.06057123100072204,276238336,276779008,0,1500,759,4795,1,True,,,one_alternating_sweep,32.0,,,,,,
+ease_fragment,0.04185423300077673,0.0546242849995906,275894272,287981568,0,1500,759,4795,1,True,,,one_full_fit_on_fragment,,True,True,0.006035555999915232,0.032093648998852586,,
+fm_minibatch,0.00570599700040475,0.8271826740001416,348844032,352686080,1,1500,759,4795,1,True,,,one_minibatch_after_warmup,32.0,,,,,1024.0,False
+custom_ials_sweep,0.06213028199999826,0.05645235500014678,276176896,276717568,0,1500,759,4795,1,True,,,one_alternating_sweep,32.0,,,,,,

@@ -1,0 +1,50 @@
+{
+  "ease_memory": {
+    "n_history_items": 11611,
+    "one_float64_matrix_bytes": 1078522568,
+    "naive_three_dense_matrices_bytes": 3235567704,
+    "sparse_gram_nnz_upper_bound": 1706065,
+    "sparse_gram_bytes_upper_bound": 20519228,
+    "solve_block_size": 128,
+    "solve_arrays_bytes": 23779328,
+    "workspace_reserve_bytes": 268435456,
+    "estimated_extra_peak_bytes": 2450619932,
+    "available_bytes_at_check": 6480642048,
+    "effective_extra_memory_budget_bytes": 3240321024,
+    "fits_optimized_strategy": true,
+    "strategy": "float64_fortran_gram_inplace_cholesky_plus_B_and_block_solves"
+  },
+  "train_only_probes": [
+    {
+      "kernel": "ials_max_rank",
+      "params": {
+        "rank": 128,
+        "regularization": 0.1,
+        "alpha": 10.0,
+        "iterations": 1,
+        "init_std": 0.01
+      },
+      "fit_and_score_seconds": 0.4956385839977884,
+      "n_history_rows": 4795,
+      "validation_labels_used": false
+    },
+    {
+      "kernel": "fm_max_rank_q",
+      "params": {
+        "rank": 64,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 1,
+        "learning_rate": 0.003,
+        "l2": 0.0001,
+        "init_std": 0.01,
+        "use_metadata": true
+      },
+      "fit_and_score_seconds": 1.4990713209990645,
+      "n_history_rows": 4795,
+      "validation_labels_used": false
+    }
+  ],
+  "budget_reduced": false,
+  "test_used": false
+}

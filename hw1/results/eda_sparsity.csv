@@ -1,0 +1,3 @@
+signal,n_users,n_items,possible_pairs,nnz,sparsity
+all_reviews,15273,11611,177334803,116209,0.9993446915211561
+positive_reviews,15273,11611,177334803,108243,0.9993896122015034

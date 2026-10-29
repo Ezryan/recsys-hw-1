@@ -1,0 +1,10 @@
+{
+  "search_key": "0ae57715c370d9a5446f3130a1b25c2e14f386098e9f835a4b1e08b0b0fd158f",
+  "status": "complete",
+  "expected_primary_trials": 46,
+  "completed_primary_trials": 46,
+  "completed_control_trials": 2,
+  "result_cache_hits": 48,
+  "current_invocation_seconds": 0.16082070099946577,
+  "test_used": false
+}

@@ -1,0 +1,2 @@
+model,purpose,params,validation_ndcg_at_10,validation_recall_at_10,fit_total_seconds,fit_body_seconds,fit_reused_cache,fit_compute_seconds,evaluation_seconds,n_users,stage_sha256
+ease,implementation_check_fixed_parameters_no_search,"{""regularization"": 100.0, ""solve_block_size"": 128}",0.015987678250211124,0.02520372092685324,1.701187418999325,0.637824086999899,True,83.45371293000062,16.543485222999152,2726,bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2

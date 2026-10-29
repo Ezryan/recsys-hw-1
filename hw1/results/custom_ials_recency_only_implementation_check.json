@@ -1,0 +1,177 @@
+{
+  "model": "custom_ials_recency_only",
+  "purpose": "implementation_check_fixed_parameters_no_search",
+  "hyperparameters_tuned": false,
+  "params": {
+    "rank": 32,
+    "regularization": 0.1,
+    "alpha": 10.0,
+    "iterations": 10,
+    "init_std": 0.01,
+    "gamma": 0.0,
+    "half_life_days": 730.0
+  },
+  "seed": 42,
+  "cpu_threads": 1,
+  "fit_total_seconds": 11.029962597998747,
+  "fit_body_seconds": 9.949875452000924,
+  "fit_reused_cache": false,
+  "fit_compute_seconds": 9.949875452000924,
+  "evaluation_seconds": 0.7833811939999578,
+  "validation": {
+    "period": "validation",
+    "k": 10,
+    "aggregation": "macro_user",
+    "n_users": 2726,
+    "n_relevant_pairs": 8005,
+    "stage_sha256": "bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2",
+    "ndcg@10": 0.019067152620049526,
+    "recall@10": 0.028635847259770784
+  },
+  "training_details": {
+    "n_users": 15273,
+    "n_history_items": 11611,
+    "n_positive_interactions": 108243,
+    "zero_positive_users": 120,
+    "zero_positive_items": 31,
+    "target_name": "rating_strength_times_cutoff_recency",
+    "observed_confidence": 11.0,
+    "other_confidence": 1.0,
+    "initial_objective": 442983.14357304166,
+    "final_objective": 328766.0342859902,
+    "objective_history": [
+      {
+        "iteration": 0,
+        "step": "initial",
+        "objective": 442983.14357304166
+      },
+      {
+        "iteration": 1,
+        "step": "users",
+        "objective": 431042.806781818
+      },
+      {
+        "iteration": 1,
+        "step": "items",
+        "objective": 385785.7105998577
+      },
+      {
+        "iteration": 2,
+        "step": "users",
+        "objective": 358379.5228228748
+      },
+      {
+        "iteration": 2,
+        "step": "items",
+        "objective": 347124.7607725451
+      },
+      {
+        "iteration": 3,
+        "step": "users",
+        "objective": 341316.0750909366
+      },
+      {
+        "iteration": 3,
+        "step": "items",
+        "objective": 337760.62438250164
+      },
+      {
+        "iteration": 4,
+        "step": "users",
+        "objective": 335445.24017974024
+      },
+      {
+        "iteration": 4,
+        "step": "items",
+        "objective": 333849.77865772817
+      },
+      {
+        "iteration": 5,
+        "step": "users",
+        "objective": 332720.51796305814
+      },
+      {
+        "iteration": 5,
+        "step": "items",
+        "objective": 331880.8264294977
+      },
+      {
+        "iteration": 6,
+        "step": "users",
+        "objective": 331242.6490828247
+      },
+      {
+        "iteration": 6,
+        "step": "items",
+        "objective": 330736.51516893326
+      },
+      {
+        "iteration": 7,
+        "step": "users",
+        "objective": 330329.68229364045
+      },
+      {
+        "iteration": 7,
+        "step": "items",
+        "objective": 329991.3589435768
+      },
+      {
+        "iteration": 8,
+        "step": "users",
+        "objective": 329708.38335004315
+      },
+      {
+        "iteration": 8,
+        "step": "items",
+        "objective": 329465.1617537173
+      },
+      {
+        "iteration": 9,
+        "step": "users",
+        "objective": 329255.98860930715
+      },
+      {
+        "iteration": 9,
+        "step": "items",
+        "objective": 329071.96492891375
+      },
+      {
+        "iteration": 10,
+        "step": "users",
+        "objective": 328910.5059885061
+      },
+      {
+        "iteration": 10,
+        "step": "items",
+        "objective": 328766.0342859902
+      }
+    ],
+    "nonincreasing_objective": true,
+    "factor_storage_bytes": 6882304,
+    "factors_sha256": "b7a92b34e168c3e5ef5ad1761b0b40d445814f8052349b82e5ec7a204dbd82b0",
+    "observed_pattern_sha256": "67a0d9ed679064d0e719421d96979ed997dec1d86fccd01210a45139be0892c8",
+    "target_sha256": "fdc1fbcaa65380a389e2e2841667087920c83867206fa65224d413060816c13a",
+    "training_context_sha256": "734f9fe0fc91beb39107db9f0f0f7e9a5d86c9c599b6825e2a7105b911913c7e",
+    "solver": "own_ALS_normal_equations_with_Cholesky_and_full_Gram",
+    "target_formula": "p=((rating-3)/2)^gamma * 2^(-age_days/half_life_days) on positive history; otherwise 0",
+    "gamma": 0.0,
+    "half_life_days": 730.0,
+    "target_reference_cutoff_utc": "2016-06-16T00:00:00+00:00",
+    "confidence_changed": false,
+    "observed_coordinates_retained_including_zero_targets": true,
+    "target_statistics": {
+      "n_values": 108243,
+      "zero_targets": 0,
+      "min": 0.001986793344298987,
+      "q01": 0.05651566113982559,
+      "q25": 0.39210584922873626,
+      "median": 0.569461902564732,
+      "q75": 0.7303071915842174,
+      "q99": 0.9867947312196229,
+      "max": 0.9990509339626257,
+      "mean": 0.5694902039662009
+    },
+    "recovers_binary_target": false
+  },
+  "test_used": false
+}

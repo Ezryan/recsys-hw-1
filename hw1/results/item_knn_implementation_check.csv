@@ -1,0 +1,2 @@
+model,purpose,params,validation_ndcg_at_10,validation_recall_at_10,fit_total_seconds,fit_body_seconds,fit_reused_cache,fit_compute_seconds,evaluation_seconds,n_users,stage_sha256
+item_knn,implementation_check_fixed_parameters_no_search,"{""k_neighbors"": 50, ""shrinkage"": 10.0, ""similarity_block_size"": 256}",0.01646445277446604,0.025037780867032233,1.5890024849995825,0.4464631820010254,False,0.4464631820010254,1.1074143400001049,2726,bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2

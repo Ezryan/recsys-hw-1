@@ -1,0 +1,17 @@
+# Python 3.12; CPU PyTorch keeps the default environment independent of CUDA.
+--index-url https://pypi.org/simple
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+numpy==2.3.1
+scipy==1.16.0
+pandas==2.3.0
+torch==2.9.0+cpu
+matplotlib==3.10.3
+seaborn==0.13.2
+jupyterlab==4.4.7
+ipykernel==6.30.1
+nbformat==5.10.4
+nbclient==0.10.2
+nbconvert==7.16.6
+threadpoolctl==3.6.0
+psutil==7.0.0

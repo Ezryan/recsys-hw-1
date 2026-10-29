@@ -1,0 +1,9 @@
+case,n_users,expected_ndcg@10,actual_ndcg@10,expected_recall@10,actual_recall@10,passed
+ideal_three_relevant,1,1.0,1.0,1.0,1.0,True
+no_hits,1,0.0,0.0,0.0,0.0,True
+one_hit_at_rank_1,1,1.0,1.0,1.0,1.0,True
+one_hit_at_rank_10,1,0.2890648263178879,0.2890648263178879,1.0,1.0,True
+two_hits_at_ranks_1_and_3,1,0.9197207891481876,0.9197207891481876,1.0,1.0,True
+twenty_relevant,1,1.0,1.0,0.5,0.5,True
+one_of_three_at_rank_2,1,0.2960819109658652,0.2960819109658652,0.3333333333333333,0.3333333333333333,True
+macro_two_unequal_histories,2,0.6100458831490401,0.6100458831490401,0.525,0.525,True

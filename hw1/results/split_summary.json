@@ -1,0 +1,60 @@
+{
+  "method": "global_temporal",
+  "timezone": "UTC",
+  "boundary_selection": "nearest_cumulative_count_train_then_train_validation",
+  "target_cumulative_fractions": [
+    0.8,
+    0.9
+  ],
+  "validation_start_utc": "2016-06-16T00:00:00+00:00",
+  "test_start_utc": "2017-02-02T00:00:00+00:00",
+  "cleaned_content_sha256": "7214299563d39665fbced9981a8e78c257986d466c5d6b7b78730702378ef9f2",
+  "membership_sha256": "2c8c0302d15c45580d7f4374d9b9b78b1bb37a41e637e76abc08235e81fecbc0",
+  "n_interactions": 145292,
+  "periods": {
+    "train": {
+      "n_interactions": 116209,
+      "fraction": 0.7998306857913718,
+      "timestamp_min_utc": "1998-07-09T00:00:00+00:00",
+      "timestamp_max_utc": "2016-06-15T00:00:00+00:00"
+    },
+    "validation": {
+      "n_interactions": 14578,
+      "fraction": 0.10033587534069323,
+      "timestamp_min_utc": "2016-06-16T00:00:00+00:00",
+      "timestamp_max_utc": "2017-02-01T00:00:00+00:00"
+    },
+    "test": {
+      "n_interactions": 14505,
+      "fraction": 0.09983343886793491,
+      "timestamp_min_utc": "2017-02-02T00:00:00+00:00",
+      "timestamp_max_utc": "2018-09-26T00:00:00+00:00"
+    }
+  },
+  "checks": {
+    "periods_nonempty": true,
+    "all_rows_assigned_once": true,
+    "strict_temporal_order": true,
+    "equal_timestamps_stay_together": true
+  },
+  "evaluation_protocol": {
+    "k": 10,
+    "relevance_rating_threshold": 4,
+    "primary_metric": "ndcg@10",
+    "secondary_metrics": [
+      "recall@10"
+    ],
+    "aggregation": "macro_user",
+    "candidate_policy": "all_history_positive_items_minus_all_seen",
+    "negative_candidate_sampling": false,
+    "cold_start_policy": "exclude_and_report",
+    "min_history_positive_interactions": 1,
+    "min_relevant_candidates": 1,
+    "min_candidates": 10,
+    "tie_break": "ascending_original_item_id",
+    "update_history_during_evaluation_period": false,
+    "validation_usage": "hyperparameter_and_epoch_selection",
+    "test_usage": "final_comparison_after_settings_are_fixed"
+  },
+  "held_out_rating_statistics_included": false
+}

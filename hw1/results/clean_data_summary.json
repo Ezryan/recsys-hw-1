@@ -1,0 +1,109 @@
+{
+  "stage": "cleaned_before_split",
+  "source_archive_sha256": "703f60f74bf1967a75cbb3033532172eeb21139d4df04ec5fe44a7eb8d7fde58",
+  "content_sha256": "7214299563d39665fbced9981a8e78c257986d466c5d6b7b78730702378ef9f2",
+  "n_interactions": 145292,
+  "n_users": 16566,
+  "n_items": 11797,
+  "n_positive_interactions": 135889,
+  "n_low_rating_interactions": 9403,
+  "timestamp_min_utc": "1998-07-09T00:00:00+00:00",
+  "timestamp_max_utc": "2018-09-26T00:00:00+00:00",
+  "dtypes": {
+    "user_id": "string",
+    "item_id": "string",
+    "rating": "float64",
+    "timestamp": "datetime64[ns, UTC]",
+    "source_line": "int64"
+  },
+  "optional_field_missing_rows": {
+    "image": 145138,
+    "reviewText": 146,
+    "reviewTime": 0,
+    "reviewerName": 4,
+    "style": 9576,
+    "summary": 33,
+    "verified": 0,
+    "vote": 138595
+  },
+  "cleaning_rules": {
+    "drop_missing_ids": true,
+    "drop_invalid_timestamps": true,
+    "rating_min": 1,
+    "rating_max": 5,
+    "drop_exact_duplicates": true,
+    "pair_duplicates": "earliest_timestamp_then_source_line",
+    "keep_low_ratings_in_history": true,
+    "additional_k_core": null,
+    "subsample": null
+  },
+  "audit": [
+    {
+      "stage": "input",
+      "input_rows": 169781,
+      "output_rows": 169781,
+      "removed_rows": 0,
+      "n_users": 16566,
+      "n_items": 11797
+    },
+    {
+      "stage": "drop_missing_ids",
+      "input_rows": 169781,
+      "output_rows": 169781,
+      "removed_rows": 0,
+      "n_users": 16566,
+      "n_items": 11797
+    },
+    {
+      "stage": "drop_invalid_timestamps",
+      "input_rows": 169781,
+      "output_rows": 169781,
+      "removed_rows": 0,
+      "n_users": 16566,
+      "n_items": 11797
+    },
+    {
+      "stage": "drop_invalid_ratings",
+      "input_rows": 169781,
+      "output_rows": 169781,
+      "removed_rows": 0,
+      "n_users": 16566,
+      "n_items": 11797
+    },
+    {
+      "stage": "drop_exact_duplicates",
+      "input_rows": 169781,
+      "output_rows": 146158,
+      "removed_rows": 23623,
+      "n_users": 16566,
+      "n_items": 11797
+    },
+    {
+      "stage": "keep_earliest_pair",
+      "input_rows": 146158,
+      "output_rows": 145292,
+      "removed_rows": 866,
+      "n_users": 16566,
+      "n_items": 11797
+    }
+  ],
+  "constraints": {
+    "interactions": {
+      "actual": 145292,
+      "min": 100000,
+      "max": 2000000,
+      "passed": true
+    },
+    "users": {
+      "actual": 16566,
+      "min": 1000,
+      "passed": true
+    },
+    "items": {
+      "actual": 11797,
+      "min": 1000,
+      "passed": true
+    }
+  },
+  "cleaned_constraints_verified": true
+}

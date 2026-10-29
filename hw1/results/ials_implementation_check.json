@@ -1,0 +1,156 @@
+{
+  "model": "ials",
+  "purpose": "implementation_check_fixed_parameters_no_search",
+  "hyperparameters_tuned": false,
+  "params": {
+    "rank": 32,
+    "regularization": 0.1,
+    "alpha": 10.0,
+    "iterations": 10,
+    "init_std": 0.01
+  },
+  "seed": 42,
+  "cpu_threads": 1,
+  "fit_total_seconds": 10.801557761998993,
+  "fit_body_seconds": 9.724959710998519,
+  "fit_reused_cache": false,
+  "fit_compute_seconds": 9.724959710998519,
+  "evaluation_seconds": 0.7597603689991956,
+  "validation": {
+    "period": "validation",
+    "k": 10,
+    "aggregation": "macro_user",
+    "n_users": 2726,
+    "n_relevant_pairs": 8005,
+    "stage_sha256": "bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2",
+    "ndcg@10": 0.015884706842877187,
+    "recall@10": 0.022848322972292685
+  },
+  "training_details": {
+    "n_users": 15273,
+    "n_history_items": 11611,
+    "n_positive_interactions": 108243,
+    "zero_positive_users": 120,
+    "zero_positive_items": 31,
+    "target_name": "binary_positive_history",
+    "observed_confidence": 11.0,
+    "other_confidence": 1.0,
+    "initial_objective": 1190742.3671359436,
+    "final_objective": 905501.008270209,
+    "objective_history": [
+      {
+        "iteration": 0,
+        "step": "initial",
+        "objective": 1190742.3671359436
+      },
+      {
+        "iteration": 1,
+        "step": "users",
+        "objective": 1158712.341181342
+      },
+      {
+        "iteration": 1,
+        "step": "items",
+        "objective": 1056978.7559542416
+      },
+      {
+        "iteration": 2,
+        "step": "users",
+        "objective": 987038.3415393598
+      },
+      {
+        "iteration": 2,
+        "step": "items",
+        "objective": 956103.5453153834
+      },
+      {
+        "iteration": 3,
+        "step": "users",
+        "objective": 939792.3934154491
+      },
+      {
+        "iteration": 3,
+        "step": "items",
+        "objective": 929819.4208301659
+      },
+      {
+        "iteration": 4,
+        "step": "users",
+        "objective": 923417.2729670776
+      },
+      {
+        "iteration": 4,
+        "step": "items",
+        "objective": 919063.8615861465
+      },
+      {
+        "iteration": 5,
+        "step": "users",
+        "objective": 916020.1426057888
+      },
+      {
+        "iteration": 5,
+        "step": "items",
+        "objective": 913770.2230537545
+      },
+      {
+        "iteration": 6,
+        "step": "users",
+        "objective": 912069.2138639844
+      },
+      {
+        "iteration": 6,
+        "step": "items",
+        "objective": 910721.6691865686
+      },
+      {
+        "iteration": 7,
+        "step": "users",
+        "objective": 909641.4309474436
+      },
+      {
+        "iteration": 7,
+        "step": "items",
+        "objective": 908742.9281825924
+      },
+      {
+        "iteration": 8,
+        "step": "users",
+        "objective": 907992.954918882
+      },
+      {
+        "iteration": 8,
+        "step": "items",
+        "objective": 907348.1110153054
+      },
+      {
+        "iteration": 9,
+        "step": "users",
+        "objective": 906794.7163802135
+      },
+      {
+        "iteration": 9,
+        "step": "items",
+        "objective": 906307.9082285172
+      },
+      {
+        "iteration": 10,
+        "step": "users",
+        "objective": 905881.9027685964
+      },
+      {
+        "iteration": 10,
+        "step": "items",
+        "objective": 905501.008270209
+      }
+    ],
+    "nonincreasing_objective": true,
+    "factor_storage_bytes": 6882304,
+    "factors_sha256": "90cc8f719601f68a086951842d6d362f5da47078f87434a50465444ba2e50604",
+    "observed_pattern_sha256": "67a0d9ed679064d0e719421d96979ed997dec1d86fccd01210a45139be0892c8",
+    "target_sha256": "67a0d9ed679064d0e719421d96979ed997dec1d86fccd01210a45139be0892c8",
+    "training_context_sha256": "734f9fe0fc91beb39107db9f0f0f7e9a5d86c9c599b6825e2a7105b911913c7e",
+    "solver": "own_ALS_normal_equations_with_Cholesky_and_full_Gram"
+  },
+  "test_used": false
+}

@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "stage": "notebook_finalized",
+  "seed": 42,
+  "dataset": {
+    "name": "Amazon Review Data (2018), Digital Music, 5-core",
+    "status": "selected_cleaned_constraints_verified",
+    "seminar_dataset_check_passed": true,
+    "source_url": "https://nijianmo.github.io/amazon/index.html",
+    "download_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFilesSmall/Digital_Music_5.json.gz",
+    "filename": "Digital_Music_5.json.gz",
+    "format": "gzip_jsonl",
+    "sha256": "703f60f74bf1967a75cbb3033532172eeb21139d4df04ec5fe44a7eb8d7fde58",
+    "fields": {
+      "user_id": "reviewerID",
+      "item_id": "asin",
+      "rating": "overall",
+      "timestamp": "unixReviewTime"
+    },
+    "constraints": {
+      "min_interactions": 100000,
+      "max_interactions": 2000000,
+      "min_users": 1000,
+      "min_items": 1000
+    },
+    "original_download_url": "https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Digital_Music_5.json.gz",
+    "download_source_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFilesSmall/",
+    "download": {
+      "attempts": 3,
+      "timeout_seconds": 30,
+      "max_bytes": 104857600
+    },
+    "seminar_dataset_check_basis": "user_confirmation_not_used_in_seminars"
+  },
+  "storage": {
+    "data_dir_env": "RECSYS_DATA_DIR",
+    "data_dir_default": ".local/data",
+    "cache_dir": ".local/cache",
+    "results_dir": "results"
+  },
+  "cleaning": {
+    "drop_missing_ids": true,
+    "drop_invalid_timestamps": true,
+    "rating_min": 1,
+    "rating_max": 5,
+    "drop_exact_duplicates": true,
+    "pair_duplicates": "earliest_timestamp_then_source_line",
+    "keep_low_ratings_in_history": true,
+    "additional_k_core": null,
+    "subsample": null
+  },
+  "split": {
+    "method": "global_temporal",
+    "timezone": "UTC",
+    "boundary_quantiles": [
+      0.8,
+      0.9
+    ],
+    "validation_start_utc": "2016-06-16T00:00:00+00:00",
+    "test_start_utc": "2017-02-02T00:00:00+00:00",
+    "equal_timestamps_stay_together": true,
+    "refit_on_train_validation": true,
+    "boundary_selection": "nearest_cumulative_count_train_then_train_validation",
+    "boundary_source_content_sha256": "7214299563d39665fbced9981a8e78c257986d466c5d6b7b78730702378ef9f2"
+  },
+  "evaluation": {
+    "k": 10,
+    "relevance_rating_threshold": 4,
+    "primary_metric": "ndcg@10",
+    "secondary_metrics": [
+      "recall@10"
+    ],
+    "aggregation": "macro_user",
+    "candidate_policy": "all_history_positive_items_minus_all_seen",
+    "negative_candidate_sampling": false,
+    "cold_start_policy": "exclude_and_report",
+    "min_history_positive_interactions": 1,
+    "min_relevant_candidates": 1,
+    "min_candidates": 10,
+    "tie_break": "ascending_original_item_id",
+    "update_history_during_evaluation_period": false,
+    "validation_usage": "hyperparameter_and_epoch_selection",
+    "test_usage": "final_comparison_after_settings_are_fixed"
+  },
+  "features": {
+    "user": [
+      "log1p_review_count",
+      "mean_rating",
+      "positive_fraction",
+      "empty_history"
+    ],
+    "item": [
+      "log1p_review_count",
+      "mean_rating",
+      "positive_fraction",
+      "log1p_observed_age_days",
+      "empty_history"
+    ],
+    "include_month": false,
+    "training_history": "strictly_before_event_timestamp",
+    "empty_history_mean_rating": 3.0,
+    "empty_history_positive_fraction": 0.0,
+    "normalization_fit_on": "training_history_only"
+  },
+  "search": {
+    "seed": 42,
+    "selection_metric": "ndcg@10",
+    "tie_break": "smaller_rank_or_neighbors_then_lexicographic_config",
+    "item_knn": {
+      "strategy": "grid",
+      "max_trials": 12,
+      "space": {
+        "k_neighbors": [
+          20,
+          50,
+          100,
+          200
+        ],
+        "shrinkage": [
+          0,
+          10,
+          50
+        ]
+      }
+    },
+    "ials": {
+      "strategy": "random_without_replacement",
+      "max_trials": 12,
+      "space": {
+        "rank": [
+          32,
+          64,
+          128
+        ],
+        "lambda": [
+          0.01,
+          0.1,
+          1.0
+        ],
+        "alpha": [
+          1,
+          10,
+          40
+        ],
+        "iterations": [
+          10,
+          20
+        ]
+      }
+    },
+    "ease": {
+      "strategy": "grid",
+      "max_trials": 4,
+      "space": {
+        "lambda": [
+          10,
+          100,
+          1000,
+          10000
+        ]
+      }
+    },
+    "fm": {
+      "strategy": "random_without_replacement",
+      "max_trials": 12,
+      "space": {
+        "rank": [
+          16,
+          32,
+          64
+        ],
+        "learning_rate": [
+          0.001,
+          0.003
+        ],
+        "l2": [
+          1e-06,
+          0.0001,
+          0.01
+        ],
+        "negatives_per_positive": [
+          1,
+          4
+        ]
+      },
+      "fixed": {
+        "batch_size": 1024,
+        "max_epochs": 20,
+        "patience": 3
+      }
+    },
+    "custom_ials": {
+      "strategy": "grid",
+      "max_trials": 6,
+      "structural_params_from": "best_validation_ials",
+      "space": {
+        "gamma": [
+          0.5,
+          1.0
+        ],
+        "half_life_days": [
+          180,
+          730,
+          "infinity"
+        ]
+      },
+      "confidence": "same_as_baseline_ials",
+      "target_reference_time": "training_history_cutoff"
+    }
+  },
+  "runtime": {
+    "reference_python": "3.12.3",
+    "device": "cpu",
+    "cpu_threads": 1,
+    "torch_interop_threads": 1,
+    "dataloader_workers": 0,
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8",
+    "user_batch_size": 128,
+    "item_batch_size": 2048,
+    "max_dense_memory_mib": 4096,
+    "max_available_memory_fraction": 0.5,
+    "environment_report": "results/environment.json",
+    "resource_probe": {
+      "max_users": 1500,
+      "max_items": 768,
+      "rank": 32,
+      "fm_batch_size": 1024,
+      "ease_solve_block_size": 128,
+      "ease_workspace_reserve_mib": 256,
+      "worker_timeout_seconds": 120
+    },
+    "reuse_model_cache": true
+  },
+  "controls": {
+    "fm_ids_only": true,
+    "custom_target_ablation": [
+      "binary",
+      "rating_only",
+      "recency_only",
+      "rating_and_recency"
+    ],
+    "paired_bootstrap_seed": 42,
+    "paired_bootstrap_resamples": 2000
+  },
+  "task": {
+    "recommendation_target": "previously_unseen_digital_music_products",
+    "interaction": "published_review_with_rating",
+    "recommendation_moment": "evaluation_period_start"
+  },
+  "implementation_checks": {
+    "item_knn": {
+      "k_neighbors": 50,
+      "shrinkage": 10.0,
+      "similarity_block_size": 256
+    },
+    "ials": {
+      "rank": 32,
+      "regularization": 0.1,
+      "alpha": 10.0,
+      "iterations": 10,
+      "init_std": 0.01
+    },
+    "ease": {
+      "regularization": 100.0,
+      "solve_block_size": 128
+    },
+    "fm": {
+      "rank": 32,
+      "learning_rate": 0.003,
+      "l2": 0.0001,
+      "negatives_per_positive": 1,
+      "batch_size": 1024,
+      "epochs": 5,
+      "use_metadata": true,
+      "init_std": 0.01
+    },
+    "custom_ials": {
+      "gamma": 1.0,
+      "half_life_days": 730.0
+    }
+  }
+}

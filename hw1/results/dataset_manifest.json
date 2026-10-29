@@ -1,0 +1,13 @@
+{
+  "name": "Amazon Review Data (2018), Digital Music, 5-core",
+  "source_url": "https://nijianmo.github.io/amazon/index.html",
+  "requested_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFilesSmall/Digital_Music_5.json.gz",
+  "resolved_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/categoryFilesSmall/Digital_Music_5.json.gz",
+  "downloaded_at_utc": "2026-10-26T12:43:33.936628+00:00",
+  "acquisition": "http_download",
+  "filename": "Digital_Music_5.json.gz",
+  "sha256": "703f60f74bf1967a75cbb3033532172eeb21139d4df04ec5fe44a7eb8d7fde58",
+  "size_bytes": 19457656,
+  "server_last_modified": "Fri, 17 Jan 2025 05:50:15 GMT",
+  "last_verified_at_utc": "2026-10-29T01:17:51.632770+00:00"
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "search_key": "0ae57715c370d9a5446f3130a1b25c2e14f386098e9f835a4b1e08b0b0fd158f",
+  "validation_stage_sha256": "bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2",
+  "selection_metric": "ndcg@10",
+  "settings_fixed_before_test": true,
+  "refit_history": "train+validation",
+  "refit_cutoff_utc": "2017-02-02T00:00:00+00:00",
+  "evaluation_period": "test",
+  "evaluation_protocol": {
+    "k": 10,
+    "relevance_rating_threshold": 4,
+    "primary_metric": "ndcg@10",
+    "secondary_metrics": [
+      "recall@10"
+    ],
+    "aggregation": "macro_user",
+    "candidate_policy": "all_history_positive_items_minus_all_seen",
+    "negative_candidate_sampling": false,
+    "cold_start_policy": "exclude_and_report",
+    "min_history_positive_interactions": 1,
+    "min_relevant_candidates": 1,
+    "min_candidates": 10,
+    "tie_break": "ascending_original_item_id",
+    "update_history_during_evaluation_period": false,
+    "validation_usage": "hyperparameter_and_epoch_selection",
+    "test_usage": "final_comparison_after_settings_are_fixed"
+  },
+  "recompute_all_history_features_and_targets_at_refit": true,
+  "models": {
+    "item_knn": {
+      "model": "item_knn",
+      "params": {
+        "k_neighbors": 200,
+        "shrinkage": 10.0,
+        "similarity_block_size": 256
+      },
+      "validation_trial_id": "item_knn_08",
+      "role": "primary"
+    },
+    "ials": {
+      "model": "ials",
+      "params": {
+        "rank": 128,
+        "regularization": 0.01,
+        "alpha": 10.0,
+        "iterations": 20,
+        "init_std": 0.01
+      },
+      "validation_trial_id": "ials_04",
+      "role": "primary"
+    },
+    "ease": {
+      "model": "ease",
+      "params": {
+        "regularization": 100.0,
+        "solve_block_size": 128
+      },
+      "validation_trial_id": "ease_03",
+      "role": "primary"
+    },
+    "fm": {
+      "model": "fm",
+      "params": {
+        "rank": 16,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 8,
+        "learning_rate": 0.001,
+        "l2": 0.0001,
+        "init_std": 0.01,
+        "use_metadata": true
+      },
+      "validation_trial_id": "fm_09",
+      "role": "primary"
+    },
+    "custom_ials": {
+      "model": "custom_ials",
+      "params": {
+        "rank": 128,
+        "regularization": 0.01,
+        "alpha": 10.0,
+        "iterations": 20,
+        "init_std": 0.01,
+        "gamma": 1.0,
+        "half_life_days": 180.0
+      },
+      "validation_trial_id": "custom_ials_05",
+      "role": "primary"
+    },
+    "fm_ids_only": {
+      "model": "fm",
+      "params": {
+        "rank": 16,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 8,
+        "learning_rate": 0.001,
+        "l2": 0.0001,
+        "init_std": 0.01,
+        "use_metadata": false
+      },
+      "validation_trial_id": "control_fm_ids_only",
+      "role": "control"
+    },
+    "custom_ials_rating_only": {
+      "model": "custom_ials",
+      "params": {
+        "rank": 128,
+        "regularization": 0.01,
+        "alpha": 10.0,
+        "iterations": 20,
+        "init_std": 0.01,
+        "gamma": 1.0,
+        "half_life_days": "infinity"
+      },
+      "validation_trial_id": "custom_ials_04",
+      "role": "control"
+    },
+    "custom_ials_recency_only": {
+      "model": "custom_ials",
+      "params": {
+        "rank": 128,
+        "regularization": 0.01,
+        "alpha": 10.0,
+        "iterations": 20,
+        "init_std": 0.01,
+        "gamma": 0.0,
+        "half_life_days": 180.0
+      },
+      "validation_trial_id": "control_custom_recency_only",
+      "role": "control"
+    }
+  },
+  "metadata_ablation": {
+    "with_metadata": "fm",
+    "IDs_only": "fm_ids_only"
+  },
+  "target_ablations": {
+    "binary": "ials",
+    "rating_only": "custom_ials_rating_only",
+    "recency_only": "custom_ials_recency_only",
+    "rating_and_recency": "custom_ials"
+  },
+  "seed": 42,
+  "test_used": false
+}

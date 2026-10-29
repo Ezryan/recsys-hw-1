@@ -1,0 +1,55 @@
+{
+  "stage": "raw_before_cleaning",
+  "n_interactions": 169781,
+  "n_users": 16566,
+  "n_items": 11797,
+  "timestamp_min_utc": "1998-07-09T00:00:00+00:00",
+  "timestamp_max_utc": "2018-09-26T00:00:00+00:00",
+  "rating_distribution": {
+    "1": 2192,
+    "2": 1812,
+    "3": 6792,
+    "4": 23143,
+    "5": 135842
+  },
+  "invalid_rating_rows": 0,
+  "invalid_timestamp_rows": 0,
+  "required_fields": {
+    "user_id": {
+      "source_field": "reviewerID",
+      "non_null_rows": 169781,
+      "missing_rows": 0,
+      "dtype": "object"
+    },
+    "item_id": {
+      "source_field": "asin",
+      "non_null_rows": 169781,
+      "missing_rows": 0,
+      "dtype": "object"
+    },
+    "rating": {
+      "source_field": "overall",
+      "non_null_rows": 169781,
+      "missing_rows": 0,
+      "dtype": "float64"
+    },
+    "timestamp": {
+      "source_field": "unixReviewTime",
+      "non_null_rows": 169781,
+      "missing_rows": 0,
+      "dtype": "int64"
+    }
+  },
+  "optional_field_non_null_rows": {
+    "image": 182,
+    "reviewText": 169623,
+    "reviewTime": 169781,
+    "reviewerName": 169776,
+    "style": 157989,
+    "summary": 169745,
+    "verified": 169781,
+    "vote": 7611
+  },
+  "source_line_is_unique": true,
+  "cleaned_constraints_verified": false
+}

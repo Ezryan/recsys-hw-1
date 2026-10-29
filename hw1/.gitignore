@@ -1,0 +1,48 @@
+# Private working files
+/plan.md
+
+# Python environments and caches
+/.venv/
+/venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local data, downloads, and intermediate artifacts
+/.local/
+/data/
+/cache/
+/tmp/
+/artifacts/
+*.jsonl
+*.jsonl.gz
+*.json.gz
+*.csv.gz
+*.zip
+*.tar
+*.tar.gz
+
+# Model weights, dense matrices, and binary datasets
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.parquet
+*.h5
+*.hdf5
+
+# Machine-specific environment reports; keep small result tables tracked
+/results/environment*.json
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.DS_Store

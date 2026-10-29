@@ -1,0 +1,7 @@
+stage,input_rows,output_rows,removed_rows,n_users,n_items
+input,169781,169781,0,16566,11797
+drop_missing_ids,169781,169781,0,16566,11797
+drop_invalid_timestamps,169781,169781,0,16566,11797
+drop_invalid_ratings,169781,169781,0,16566,11797
+drop_exact_duplicates,169781,146158,23623,16566,11797
+keep_earliest_pair,146158,145292,866,16566,11797

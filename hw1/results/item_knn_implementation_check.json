@@ -1,0 +1,42 @@
+{
+  "model": "item_knn",
+  "purpose": "implementation_check_fixed_parameters_no_search",
+  "hyperparameters_tuned": false,
+  "params": {
+    "k_neighbors": 50,
+    "shrinkage": 10.0,
+    "similarity_block_size": 256
+  },
+  "seed": 42,
+  "cpu_threads": 1,
+  "fit_total_seconds": 1.5890024849995825,
+  "fit_body_seconds": 0.4464631820010254,
+  "fit_reused_cache": false,
+  "fit_compute_seconds": 0.4464631820010254,
+  "evaluation_seconds": 1.1074143400001049,
+  "validation": {
+    "period": "validation",
+    "k": 10,
+    "aggregation": "macro_user",
+    "n_users": 2726,
+    "n_relevant_pairs": 8005,
+    "stage_sha256": "bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2",
+    "ndcg@10": 0.01646445277446604,
+    "recall@10": 0.025037780867032233
+  },
+  "training_details": {
+    "n_users": 15273,
+    "n_history_items": 11611,
+    "n_positive_interactions": 108243,
+    "zero_norm_items": 31,
+    "similarity_nnz": 494616,
+    "max_neighbors_per_target": 50,
+    "similarity_storage_bytes": 5981840,
+    "max_cooccurrence_block_nnz": 45764,
+    "similarity_sha256": "9ee3aa0d5ec1102dde969e75ef0bcc9a313dec26a5aa5f8f56d4da72a21a7cc1",
+    "training_context_sha256": "734f9fe0fc91beb39107db9f0f0f7e9a5d86c9c599b6825e2a7105b911913c7e",
+    "orientation": "S[source_item, target_item]",
+    "score_normalization": "none_sum_of_similarities"
+  },
+  "test_used": false
+}

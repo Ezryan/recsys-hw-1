@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "search_seed": 42,
+  "selection_metric": "ndcg@10",
+  "tie_break": "smaller_rank_or_neighbors_then_lexicographic_config",
+  "fm_epoch_tie_break": "earliest_epoch",
+  "fm_patience": 3,
+  "primary_trial_count": 46,
+  "trials": [
+    {
+      "trial_id": "item_knn_01",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 100,
+        "shrinkage": 0,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_02",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 100,
+        "shrinkage": 10,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_03",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 100,
+        "shrinkage": 50,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_04",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 20,
+        "shrinkage": 0,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_05",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 20,
+        "shrinkage": 10,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_06",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 20,
+        "shrinkage": 50,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_07",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 200,
+        "shrinkage": 0,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_08",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 200,
+        "shrinkage": 10,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_09",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 200,
+        "shrinkage": 50,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_10",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 50,
+        "shrinkage": 0,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_11",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 50,
+        "shrinkage": 10,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "item_knn_12",
+      "model": "item_knn",
+      "purpose": "search",
+      "params_template": {
+        "k_neighbors": 50,
+        "shrinkage": 50,
+        "similarity_block_size": 256
+      }
+    },
+    {
+      "trial_id": "ials_01",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "regularization": 0.01,
+        "alpha": 10,
+        "iterations": 10,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_02",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "regularization": 0.1,
+        "alpha": 1,
+        "iterations": 10,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_03",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "regularization": 1.0,
+        "alpha": 10,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_04",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 128,
+        "regularization": 0.01,
+        "alpha": 10,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_05",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "regularization": 0.01,
+        "alpha": 10,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_06",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "regularization": 0.1,
+        "alpha": 40,
+        "iterations": 10,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_07",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 128,
+        "regularization": 0.1,
+        "alpha": 1,
+        "iterations": 10,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_08",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "regularization": 0.01,
+        "alpha": 40,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_09",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 128,
+        "regularization": 1.0,
+        "alpha": 40,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_10",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "regularization": 0.1,
+        "alpha": 40,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_11",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "regularization": 1.0,
+        "alpha": 40,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ials_12",
+      "model": "ials",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "regularization": 0.01,
+        "alpha": 1,
+        "iterations": 20,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "ease_01",
+      "model": "ease",
+      "purpose": "search",
+      "params_template": {
+        "regularization": 10000,
+        "solve_block_size": 128
+      }
+    },
+    {
+      "trial_id": "ease_02",
+      "model": "ease",
+      "purpose": "search",
+      "params_template": {
+        "regularization": 1000,
+        "solve_block_size": 128
+      }
+    },
+    {
+      "trial_id": "ease_03",
+      "model": "ease",
+      "purpose": "search",
+      "params_template": {
+        "regularization": 100,
+        "solve_block_size": 128
+      }
+    },
+    {
+      "trial_id": "ease_04",
+      "model": "ease",
+      "purpose": "search",
+      "params_template": {
+        "regularization": 10,
+        "solve_block_size": 128
+      }
+    },
+    {
+      "trial_id": "fm_01",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 16,
+        "learning_rate": 0.001,
+        "l2": 0.01,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_02",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 16,
+        "learning_rate": 0.003,
+        "l2": 1e-06,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_03",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "learning_rate": 0.003,
+        "l2": 0.01,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_04",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 16,
+        "learning_rate": 0.003,
+        "l2": 0.01,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_05",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "learning_rate": 0.001,
+        "l2": 0.01,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_06",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "learning_rate": 0.001,
+        "l2": 1e-06,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_07",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "learning_rate": 0.001,
+        "l2": 0.0001,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_08",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "learning_rate": 0.001,
+        "l2": 1e-06,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_09",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 16,
+        "learning_rate": 0.001,
+        "l2": 0.0001,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_10",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 32,
+        "learning_rate": 0.003,
+        "l2": 0.01,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_11",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 64,
+        "learning_rate": 0.003,
+        "l2": 1e-06,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "fm_12",
+      "model": "fm",
+      "purpose": "search",
+      "params_template": {
+        "rank": 16,
+        "learning_rate": 0.003,
+        "l2": 0.0001,
+        "negatives_per_positive": 1,
+        "batch_size": 1024,
+        "epochs": 20,
+        "use_metadata": true,
+        "init_std": 0.01
+      }
+    },
+    {
+      "trial_id": "custom_ials_01",
+      "model": "custom_ials",
+      "purpose": "search",
+      "params_template": {
+        "gamma": 0.5,
+        "half_life_days": "infinity"
+      },
+      "structural_params_from": "best_validation_ials"
+    },
+    {
+      "trial_id": "custom_ials_02",
+      "model": "custom_ials",
+      "purpose": "search",
+      "params_template": {
+        "gamma": 0.5,
+        "half_life_days": 180
+      },
+      "structural_params_from": "best_validation_ials"
+    },
+    {
+      "trial_id": "custom_ials_03",
+      "model": "custom_ials",
+      "purpose": "search",
+      "params_template": {
+        "gamma": 0.5,
+        "half_life_days": 730
+      },
+      "structural_params_from": "best_validation_ials"
+    },
+    {
+      "trial_id": "custom_ials_04",
+      "model": "custom_ials",
+      "purpose": "search",
+      "params_template": {
+        "gamma": 1.0,
+        "half_life_days": "infinity"
+      },
+      "structural_params_from": "best_validation_ials"
+    },
+    {
+      "trial_id": "custom_ials_05",
+      "model": "custom_ials",
+      "purpose": "search",
+      "params_template": {
+        "gamma": 1.0,
+        "half_life_days": 180
+      },
+      "structural_params_from": "best_validation_ials"
+    },
+    {
+      "trial_id": "custom_ials_06",
+      "model": "custom_ials",
+      "purpose": "search",
+      "params_template": {
+        "gamma": 1.0,
+        "half_life_days": 730
+      },
+      "structural_params_from": "best_validation_ials"
+    }
+  ],
+  "controls": {
+    "fm_ids_only": "same selected FM parameters, examples, seed, epoch count; metadata disabled",
+    "custom_target": "binary, rating_only, recency_only, rating_and_recency; frozen best iALS structure",
+    "finite_half_life_rule": "selected custom h if finite; otherwise best finite trial at selected gamma on validation",
+    "additional_training_trials": 2,
+    "reuse_grid_trials": "rating_only and rating_and_recency reuse matching custom grid results"
+  },
+  "test_used": false,
+  "search_key": "0ae57715c370d9a5446f3130a1b25c2e14f386098e9f835a4b1e08b0b0fd158f",
+  "plan_sha256": "039bed4aa355d77f09ff58a85ea6c4153c605bb43bf0683407f1b23f0dcc7f93",
+  "history_context_sha256": "734f9fe0fc91beb39107db9f0f0f7e9a5d86c9c599b6825e2a7105b911913c7e",
+  "validation_stage_sha256": "bf1c04b96a2ef45666219fa7f2bdddfe0254cf7b7314a9a91f4eb8140ae276e2",
+  "code_sha256": "42427d02099ac4ae07bd4d41818cd63c0c448d8da23ecdd0b27221cfe74b73bb",
+  "resolved_controls": [
+    {
+      "trial_id": "control_fm_ids_only",
+      "model": "fm",
+      "purpose": "control",
+      "params": {
+        "rank": 16,
+        "negatives_per_positive": 4,
+        "batch_size": 1024,
+        "epochs": 8,
+        "learning_rate": 0.001,
+        "l2": 0.0001,
+        "init_std": 0.01,
+        "use_metadata": false
+      }
+    },
+    {
+      "trial_id": "control_custom_recency_only",
+      "model": "custom_ials",
+      "purpose": "control",
+      "params": {
+        "rank": 128,
+        "regularization": 0.01,
+        "alpha": 10.0,
+        "iterations": 20,
+        "init_std": 0.01,
+        "gamma": 0.0,
+        "half_life_days": 180.0
+      }
+    }
+  ],
+  "resolved_custom_structural_params": {
+    "rank": 128,
+    "regularization": 0.01,
+    "alpha": 10.0,
+    "iterations": 20,
+    "init_std": 0.01
+  }
+}
